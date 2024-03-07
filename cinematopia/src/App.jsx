@@ -1,10 +1,10 @@
+import Homepage from "./pages/home/Homepage";
+
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Cinematopia beyond fuor wor krom
-      </h1>
-    </>
+    <div>
+      <Homepage />
+    </div>
   );
 }
 
