@@ -1,7 +1,7 @@
 import React from "react";
 
 const Genre = () => {
-  return <div>This is the genre page</div>;
+  return <div>This is the trending movies page</div>;
 };
 
 export default Genre;
