@@ -14,7 +14,7 @@ const SearchBar = () => {
           <span>Home</span>
         </Link>
         <Link to="/genre" className="mr-4 mb-2 lg:mb-0 hover:opacity-75">
-          <span>Genre</span>
+          <span>Trending</span>
         </Link>
         <Link to="/movies" className="mr-4 mb-2 lg:mb-0 hover:opacity-75">
           <span>Movies</span>
