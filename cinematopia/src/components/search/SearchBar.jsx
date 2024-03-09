@@ -14,7 +14,7 @@ const SearchBar = () => {
           <span>Home</span>
         </Link>
         <Link to="/trending" className="mr-4 mb-2 lg:mb-0 hover:opacity-75">
-          <span>Trending</span>
+          <span>Popular</span>
         </Link>
         <Link to="/movies" className="mr-4 mb-2 lg:mb-0 hover:opacity-75">
           <span>Movies</span>
@@ -26,7 +26,7 @@ const SearchBar = () => {
       <form className="mr-5">
         <input
           type="text"
-          class=" pl-2 block w-full lg:w-96 h-10 rounded-md border ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-gray-400 sm:text-sm sm:leading-6 bg-transparent text-white"
+          className=" pl-2 block w-full lg:w-96 h-10 rounded-md border ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-gray-400 sm:text-sm sm:leading-6 bg-transparent text-white"
           placeholder="Search for your favorite movie or TV show"
         />
       </form>
