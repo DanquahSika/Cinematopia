@@ -13,7 +13,7 @@ const SearchBar = () => {
         <Link to="/" className="mr-4 mb-2 lg:mb-0 hover:opacity-75">
           <span>Home</span>
         </Link>
-        <Link to="/genre" className="mr-4 mb-2 lg:mb-0 hover:opacity-75">
+        <Link to="/trending" className="mr-4 mb-2 lg:mb-0 hover:opacity-75">
           <span>Trending</span>
         </Link>
         <Link to="/movies" className="mr-4 mb-2 lg:mb-0 hover:opacity-75">

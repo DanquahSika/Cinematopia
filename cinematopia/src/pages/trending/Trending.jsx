@@ -1,7 +1,7 @@
 import React from "react";
 
-const Genre = () => {
+const Trending = () => {
   return <div>This is the trending movies page</div>;
 };
 
-export default Genre;
+export default Trending;
