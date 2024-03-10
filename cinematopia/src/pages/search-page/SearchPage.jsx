@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
 const SearchPage = () => {
-  return (
-    <div>SearchPage</div>
-  )
-}
+  return <div>SearchPage</div>;
+};
 
-export default SearchPage
+export default SearchPage;
