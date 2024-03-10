@@ -24,7 +24,7 @@ const Trending = () => {
 
   return (
     <div>
-      <h4 className="text-center pb-2">Browse our Popular movies/ tv shows</h4>
+      {/* <h4 className="text-center pb-2">Browse our Popular movies/ tv shows</h4> */}
       <div className="flex flex-wrap mx-auto items-center justify-center">
         {movies.map((item) => {
           const posterUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
