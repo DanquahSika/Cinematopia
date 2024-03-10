@@ -1,6 +1,7 @@
 import React from "react";
 import star from "../../assets/img/star.png";
 import play from "../../assets/img/play.svg";
+
 const MovieCard = ({ title, poster, release, rating }) => {
   return (
     <div
