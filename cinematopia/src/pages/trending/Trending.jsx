@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "../../components/movie-card/MovieCard";
+import Pagination from "../../components/pagination/Pagination";
 
 const Trending = () => {
   const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(1);
 
   const fetchTrending = () => {
     fetch(
       // "https://api.themoviedb.org/3/trending/all/day?api_key=758ef82708fe77d393847f402f8756a0"
-      "https://api.themoviedb.org/3/movie/popular?api_key=758ef82708fe77d393847f402f8756a0"
+      `https://api.themoviedb.org/3/movie/popular?api_key=758ef82708fe77d393847f402f8756a0&page=${page}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -20,7 +22,7 @@ const Trending = () => {
 
   useEffect(() => {
     fetchTrending();
-  }, []);
+  }, [page]);
 
   return (
     <div>
@@ -40,6 +42,7 @@ const Trending = () => {
           );
         })}
       </div>
+      <Pagination page={page} setPage={setPage} />
     </div>
   );
 };
