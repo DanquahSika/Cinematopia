@@ -28,7 +28,7 @@ const Trending = () => {
     <div>
       {/* <h4 className="text-center pb-2">Browse our Popular movies/ tv shows</h4> */}
       <div
-        className="flex flex-wrap mx-auto items-center justify-center"
+        className="flex flex-wrap mx-auto items-center justify-center mt-5"
         style={{ maxWidth: "1340px" }}
       >
         {movies.map((item) => {
