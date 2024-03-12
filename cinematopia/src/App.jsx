@@ -1,27 +1,25 @@
-import SearchBar from "./components/search/SearchBar";
-import Trending from "./pages/trending/Trending";
-import Homepage from "./pages/home/Homepage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Movies from "./pages/movies/Movies";
-import TVShows from "./pages/tvshows/TVShows";
-import SearchPage from "./pages/search-page/SearchPage";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/navbar/Navbar";
-// import SingleMovie from "./pages/singlemovie/SingleMovie";
+import Homepage from "./pages/home/Homepage";
+import Trending from "./pages/trending/Trending";
+import Movies from "./pages/movies/Movies";
+import SearchPage from "./pages/search-page/SearchPage";
+import TVShows from "./pages/tvshows/TVShows";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <SearchBar />
       <Nav />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/trending" element={<Trending />} />
-        <Route path="/tvshows" element={<TVShows />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/tvshows" element={<TVShows />} />
         <Route path="/search" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

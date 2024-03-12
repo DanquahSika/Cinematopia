@@ -8,7 +8,7 @@ const Nav = () => {
     { name: "Home", link: "/" },
     { name: "Popular", link: "/trending" },
     { name: "Movies", link: "/movies" },
-    { name: "TV Shows", link: "/tvshows" }, // Changed from "Movies" to "TV Shows"
+    { name: "TV Shows", link: "/tvshows" },
     { name: "Search", link: "/search" },
   ];
   let [open, setOpen] = useState(false);
