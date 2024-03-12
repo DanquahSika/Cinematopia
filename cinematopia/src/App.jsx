@@ -5,12 +5,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Movies from "./pages/movies/Movies";
 import TVShows from "./pages/tvshows/TVShows";
 import SearchPage from "./pages/search-page/SearchPage";
+import Nav from "./components/navbar/Navbar";
 // import SingleMovie from "./pages/singlemovie/SingleMovie";
 
 function App() {
   return (
     <BrowserRouter>
       <SearchBar />
+      <Nav />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/trending" element={<Trending />} />
