@@ -27,7 +27,10 @@ const Trending = () => {
   return (
     <div>
       {/* <h4 className="text-center pb-2">Browse our Popular movies/ tv shows</h4> */}
-      <div className="flex flex-wrap mx-auto items-center justify-center">
+      <div
+        className="flex flex-wrap mx-auto items-center justify-center mt-5"
+        style={{ maxWidth: "1340px" }}
+      >
         {movies.map((item) => {
           const posterUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
           return (
