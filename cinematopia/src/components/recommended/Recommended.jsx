@@ -30,13 +30,26 @@ const Recommended = () => {
     fetchRecommendedMovies();
   }, []);
 
+  const getReleaseDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  const getGenreName = (genreId) => {
+    return "Drama"; // Replace with actual genre lookup logic
+  };
+
   return (
-    <section className="bg-gray-200 py-12 mt-8">
+    <section className="bg-gray-200 py-8 mt-8">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-black mb-8">
+        <h2 className="text-3xl font-bold text-black mb-4">
           Recommended Movies
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {recommendedMovies.map((movie) => (
             <div
               key={movie.id}
@@ -45,20 +58,33 @@ const Recommended = () => {
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
-                className="w-full h-64 object-cover object-center"
+                className="w-full h-48 object-cover object-center"
               />
               <div className="p-4 flex flex-col justify-between flex-grow">
                 <div>
-                  <h3 className="text-lg font-bold mb-2 text-black">
+                  <h3 className="text-lg font-bold mb-1 text-black">
                     {movie.title}
                   </h3>
-                  <div className="flex items-center mb-2">
-                    <FaStar className="text-EA8F11 mr-1" />
+                  <div className="flex items-center mb-1">
+                    <FaStar className="text-yellow-400 mr-1" />
                     <p className="text-gray-700">{movie.vote_average}</p>
                   </div>
-                  <p className="text-gray-600">{movie.overview}</p>
+                  <p className="text-sm text-gray-600 mb-1">
+                    <span className="font-bold">Release Date:</span>{" "}
+                    {getReleaseDate(movie.release_date)}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-1">
+                    <span className="font-bold">Genres:</span>{" "}
+                    {movie.genre_ids.map((genreId, index) => (
+                      <span key={genreId}>
+                        {index > 0 && ", "}
+                        {getGenreName(genreId)}
+                      </span>
+                    ))}
+                  </p>
+                  <p className="text-sm text-gray-600">{movie.overview}</p>
                 </div>
-                <button className="bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-4 self-center">
+                <button className="bg-yellow-600 text-white font-bold py-1 px-3 self-end rounded mt-2">
                   Watch Now
                 </button>
               </div>

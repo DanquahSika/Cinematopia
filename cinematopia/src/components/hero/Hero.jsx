@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FaBell } from "react-icons/fa";
 
 const Hero = () => {
   const [movies, setMovies] = useState([]);
@@ -48,8 +49,6 @@ const Hero = () => {
   };
 
   const handleSetReminder = (movieId) => {
-    // Add logic to set reminder
-
     console.log(`Reminder set for movie ${movieId}`);
   };
 
@@ -87,7 +86,8 @@ const Hero = () => {
                 </button>
               </div>
             </div>
-            <div className="absolute top-0 right-0 px-2 py-1 bg-gray-800 rounded-bl-lg text-white text-2xl font-bold">
+            <div className="absolute top-0 right-0 px-2 py-1 bg-gray-800 rounded-bl-lg text-white text-2xl font-bold flex items-center">
+              <FaBell className="text-yellow-500 mr-2" />
               Coming Soon
             </div>
           </div>
