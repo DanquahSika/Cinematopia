@@ -8,7 +8,6 @@ const Trending = () => {
 
   const fetchTrending = () => {
     fetch(
-      // "https://api.themoviedb.org/3/trending/all/day?api_key=758ef82708fe77d393847f402f8756a0"
       `https://api.themoviedb.org/3/movie/popular?api_key=758ef82708fe77d393847f402f8756a0&page=${page}`
     )
       .then((res) => res.json())
@@ -26,7 +25,6 @@ const Trending = () => {
 
   return (
     <div>
-      {/* <h4 className="text-center pb-2">Browse our Popular movies/ tv shows</h4> */}
       <div
         className="flex flex-wrap mx-auto items-center justify-center mt-5"
         style={{ maxWidth: "1340px" }}
