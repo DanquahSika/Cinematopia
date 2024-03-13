@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "../../components/movie-card/MovieCard";
 import Pagination from "../../components/pagination/Pagination";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
   const [film, setFilm] = useState([]);
@@ -30,6 +31,7 @@ const Movies = () => {
         style={{ maxWidth: "1340px" }}
       >
         {film.map((item) => {
+          <Link to={`/film/${item.id}`}>{item.original_title}</Link>;
           const posterUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
           return (
             <MovieCard
