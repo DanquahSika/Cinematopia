@@ -7,12 +7,14 @@ import Movies from "./pages/movies/Movies";
 import SearchPage from "./pages/search-page/SearchPage";
 import TVShows from "./pages/tvshows/TVShows";
 import SingleMovie from "./pages/singlemovie/SingleMovie";
+import Login from "./pages/login";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/" element={<Homepage />} />
         <Route path="/trending" element={<Trending />} />
         <Route path="/movies" element={<Movies />} />
