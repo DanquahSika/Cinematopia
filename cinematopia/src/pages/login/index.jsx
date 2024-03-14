@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import "./index.css"
 
 
@@ -20,7 +21,9 @@ const Login = () => {
                     <form className="flex flex-col">
                         <input placeholder="Email" className="bg-gray-700 text-white border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none transition ease-in-out duration-150 placeholder-gray-300" type="email" />
                         <input placeholder="Password" className="bg-gray-700 text-white border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none transition ease-in-out duration-150 placeholder-gray-300" type="password" />
-                        <button className="bg-gradient-to-r from-yellow-100 to-yellow-500 text-white font-medium py-2 px-4 rounded-md hover:bg-yellow-100 hover:to-yellow-600 duration ease-in duration-200">Submit</button>
+                       <Link to= '/home'>
+                       <button className="bg-gradient-to-r from-yellow-100 to-yellow-500 text-white font-medium py-2 px-4 rounded-md hover:bg-yellow-100 hover:to-yellow-600 duration ease-in duration-200">Submit</button>
+                       </Link>
                         <p className="text-white mt-4 text-center">Don't have an account yet?
                             <a className="text-white-500 hover:underline mt-4 px-1 cursor-pointer" onClick={() => setIsLogin(false)}>Sign Up</a>
                         </p>
