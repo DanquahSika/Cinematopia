@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import MovieCard from "../../components/movie-card/MovieCard";
+import MovieCard from "../movie-card/MovieCard";
 import { FaArrowRight, FaFire } from "react-icons/fa";
 
-const Trending = () => {
+const TrendingMovies = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -57,4 +57,4 @@ const Trending = () => {
   );
 };
 
-export default Trending;
+export default TrendingMovies;
