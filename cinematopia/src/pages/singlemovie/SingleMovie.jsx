@@ -126,7 +126,7 @@ const SingleMovie = () => {
                   <b>Author:</b> {review.author}
                 </p>
                 <p className="text-center pt-2 px-2">
-                  <b>Content:</b> {review.content}
+                  <b>Content:</b> {review.content.substring(0, 50)}
                 </p>
               </div>
             ))}

@@ -40,7 +40,7 @@ const Trending = () => {
               const posterUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
               return (
                 <MovieCard
-                  key={item.id}
+                  id={item.id}
                   title={item.title}
                   poster={posterUrl}
                   release={item.release_date}
