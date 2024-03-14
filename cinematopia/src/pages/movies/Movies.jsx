@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "../../components/movie-card/MovieCard";
 import Pagination from "../../components/pagination/Pagination";
-import { Link } from "react-router-dom";
 
 const Movies = () => {
   const [film, setFilm] = useState([]);
   const [page, setPage] = useState(1);
-
   const fetchFilm = () => {
     fetch(
       `https://api.themoviedb.org/3/trending/movie/week?api_key=758ef82708fe77d393847f402f8756a0&page=${page}`
@@ -31,7 +29,6 @@ const Movies = () => {
         style={{ maxWidth: "1340px" }}
       >
         {film.map((item) => {
-          <Link to={`/film/${item.id}`}>{item.original_title}</Link>;
           const posterUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
           return (
             <MovieCard
@@ -41,6 +38,7 @@ const Movies = () => {
               release={item.release_date}
               type={item.media_type}
               rating={item.vote_average}
+              id={item.id}
             />
           );
         })}

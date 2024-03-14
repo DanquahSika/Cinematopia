@@ -1,9 +1,8 @@
 import React from "react";
 import star from "../../assets/img/star.png";
 import play from "../../assets/img/play.svg";
-import Link from "react-router-dom";
-
-const MovieCard = ({ title, poster, release, rating, type }) => {
+import { Link } from "react-router-dom";
+const MovieCard = ({ title, poster, release, rating, type, id }) => {
   return (
     <div
       className="w-330  m-0 flex items-center flex-col p-0 rounded-md shadow-md mr-3 mb-2 relative bg-teal-950 bg-opacity-25"
