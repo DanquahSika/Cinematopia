@@ -1,7 +1,8 @@
 import React from "react";
 import star from "../../assets/img/star.png";
-import play from "../../assets/img/play.svg";
+import play from "../../assets/img/playfilled.svg";
 import { Link } from "react-router-dom";
+
 const MovieCard = ({ title, poster, release, rating, type, id }) => {
   return (
     <div
@@ -15,7 +16,7 @@ const MovieCard = ({ title, poster, release, rating, type, id }) => {
           className="h-auto absolute top-36 cursor-pointer transform 
         transition duration-3000 
         hover:scale-125"
-          style={{ width: "80px" }}
+          style={{ width: "50px" }}
         />
       </Link>
       <img
