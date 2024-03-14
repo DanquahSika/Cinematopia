@@ -13,14 +13,17 @@ const Pagination = ({ page, setPage }) => {
   };
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-end items-center">
       <button
         onClick={Previous}
-        className="bg-transparent rounded p-1 mr-5 border"
+        className="bg-transparent rounded p-1 mr-5 border w-64 hover:bg-orange-400 hover:text-white"
       >
         Previous
       </button>
-      <button onClick={Next} className="bg-transparent rounded p-1 mr-5 border">
+      <button
+        onClick={Next}
+        className="bg-transparent rounded p-1 mr-5 border w-64 hover:bg-orange-400 hover:text-white"
+      >
         Next
       </button>
     </div>

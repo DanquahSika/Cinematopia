@@ -1,11 +1,9 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
 
 @layer components {
   .socialIcon {
@@ -13,25 +11,32 @@
   }
 }
 
-
-.hero{
-	background: radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)), url(../../assets/img-log/login-background.jpeg);
-	background-repeat: none;
-	background-size: cover;
+.hero {
+  background: radial-gradient(
+      circle at 50% 100%,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.85)
+    ),
+    url(../../assets/img-log/login-background.jpeg);
+  background-repeat: none;
+  background-size: cover;
 }
-.social-links i{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
+.social-links i {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
 }
-.social-links i:hover{
-	color: #24262b;
-	background-color: #ffffff;
+.social-links i:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+.link {
+  margin: 0 auto;
 }
