@@ -1,21 +1,23 @@
 import React from "react";
 import star from "../../assets/img/star.png";
 import play from "../../assets/img/play.svg";
-
-const MovieCard = ({ title, poster, release, rating, type }) => {
+import { Link } from "react-router-dom";
+const MovieCard = ({ title, poster, release, rating, type, id }) => {
   return (
     <div
       className="w-330  m-0 flex items-center flex-col p-0 rounded-md shadow-md mr-3 mb-2 relative bg-teal-950 bg-opacity-25"
       style={{ color: "#ea8f11" }}
     >
-      <img
-        src={play}
-        alt="play-icon"
-        className="h-auto absolute top-36 cursor-pointer transform 
+      <Link to={`/movies/${id}`}>
+        <img
+          src={play}
+          alt="play-icon"
+          className="h-auto absolute top-36 cursor-pointer transform 
         transition duration-3000 
         hover:scale-125"
-        style={{ width: "80px" }}
-      />
+          style={{ width: "80px" }}
+        />
+      </Link>
       <img
         src={poster}
         alt={title}

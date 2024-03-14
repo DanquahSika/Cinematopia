@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "../../components/movie-card/MovieCard";
 import Pagination from "../../components/pagination/Pagination";
-
 const Trending = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
