@@ -50,7 +50,7 @@ const Featured = () => {
   return (
     <section className="bg-gray-900 py-4 mt-8">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-4">
+        <h2 className="text-3xl font-bold text-white mb-10">
           Featured Movies Of The Week
         </h2>
         <Slider {...settings} className="overflow-hidden">
@@ -67,7 +67,7 @@ const Featured = () => {
                     {movie.title}
                   </h3>
                   <div className="flex items-center mb-2">
-                    <FaStar className="text-yellow-400 mr-1" />
+                    <FaStar className="text-yellow-600 mr-1" />
                     <p className="text-gray-300">{movie.vote_average}</p>
                   </div>
                 </div>

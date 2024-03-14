@@ -40,16 +40,16 @@ const Recommended = () => {
   };
 
   const getGenreName = (genreId) => {
-    return "Drama"; // Replace with actual genre lookup logic
+    return "Drama";
   };
 
   return (
-    <section className="bg-gray-200 py-8 mt-8">
+    <section className="bg-gray-200 py-8 mt-8 px-16">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-black mb-4">
+        <h2 className="text-4xl font-bold text-black mb-10 mt-6 ">
           Recommended Movies
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-24 gap-x-12">
           {recommendedMovies.map((movie) => (
             <div
               key={movie.id}

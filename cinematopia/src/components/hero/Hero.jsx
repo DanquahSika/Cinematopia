@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaBell } from "react-icons/fa";
+import { FaBell, FaTimes } from "react-icons/fa";
 
 const Hero = () => {
   const [movies, setMovies] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showReminderModal, setShowReminderModal] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -48,8 +49,19 @@ const Hero = () => {
     );
   };
 
-  const handleSetReminder = (movieId) => {
-    console.log(`Reminder set for movie ${movieId}`);
+  const handleSetReminder = () => {
+    setShowReminderModal(true);
+  };
+
+  const handleCloseReminderModal = () => {
+    setShowReminderModal(false);
+  };
+
+  const handleSubmitEmail = (e) => {
+    e.preventDefault();
+    console.log("Email submitted:", e.target.email.value);
+    e.target.reset();
+    setShowReminderModal(false);
   };
 
   return (
@@ -67,17 +79,21 @@ const Hero = () => {
               alt={movie.title}
               className="w-full h-full object-cover rounded-lg"
             />
-            <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black to-transparent opacity-80 p-8 text-center text-white flex flex-col justify-center">
-              <p className="text-sm mb-4">{movie.release_date}</p>
-              <h2 className="text-4xl font-bold mb-4">{movie.title}</h2>
-              <div className="mb-4">
+            <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/80  p-8 text-center text-white flex flex-col justify-center">
+              <p className="text-2xl font-bold mb-4 text-yellow-600">
+                {movie.release_date}{" "}
+              </p>
+              <h1 className="text-7xl font-bold mb-4">{movie.title}</h1>
+              <div className="mb-4 flex w-full flex-col items-center">
                 <h3 className="text-2xl font-bold mb-2">Overview</h3>
-                <p className="text-lg">{movie.overview}</p>
+                <p className="text-lg md:w-1/2  text-center">
+                  {movie.overview}{" "}
+                </p>
               </div>
               <div>
                 <button
                   className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mr-6"
-                  onClick={() => handleSetReminder(movie.id)}
+                  onClick={handleSetReminder}
                 >
                   Set Reminder
                 </button>
@@ -93,7 +109,6 @@ const Hero = () => {
           </div>
         ))}
       </div>
-      {/* Slider arrows */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center mb-4">
         <button
           className="bg-yellow-600 text-white w-10 h-10 rounded-full focus:outline-none mr-4"
@@ -108,6 +123,42 @@ const Hero = () => {
           &gt;
         </button>
       </div>
+      {showReminderModal && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+          <div className="relative bg-white p-8 rounded-lg shadow-md z-10">
+            <div className="flex justify-end">
+              <button
+                className="text-gray-600 hover:text-gray-800"
+                onClick={handleCloseReminderModal}
+              >
+                <FaTimes />
+              </button>
+            </div>
+            <h2 className="text-xl font-bold mb-4">
+              Enter your best email to recieve notification when movie is
+              released
+            </h2>
+            <form onSubmit={handleSubmitEmail}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                className="w-full border rounded-md px-4 py-2 mb-4"
+                required
+              />
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  className="bg-yellow-600 text-white font-bold px-4 py-2 rounded-md hover:bg-yellow-700"
+                >
+                  Remind Me
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

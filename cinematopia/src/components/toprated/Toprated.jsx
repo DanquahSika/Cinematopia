@@ -31,7 +31,7 @@ const TopRated = () => {
   return (
     <section className="py-8 mt-8">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
+        <h2 className="text-4xl font-bold text-white mb-10 mt-8 flex items-center">
           Top Rated Movies
           <FaStar className="text-yellow-600 ml-2" />
         </h2>
