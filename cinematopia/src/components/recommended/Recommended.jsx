@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Recommended = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
@@ -84,9 +85,12 @@ const Recommended = () => {
                   </p>
                   <p className="text-sm text-gray-600">{movie.overview}</p>
                 </div>
-                <button className="bg-yellow-600 text-white font-bold py-1 px-3 self-end rounded mt-2">
-                  Watch Now
-                </button>
+                <Link to="/tvshows">
+                  {" "}
+                  <button className="bg-yellow-600 text-white font-bold py-1 px-3 self-end rounded mt-2">
+                    Watch Now
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

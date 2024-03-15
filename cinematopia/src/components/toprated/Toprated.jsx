@@ -60,7 +60,7 @@ const TopRated = () => {
           ))}
         </div>
         <div className="mt-4 flex justify-center">
-          <Link to="/toprated">
+          <Link to="/movies">
             <button className="text-lg py-2 px-6 bg-yellow-600 text-white font-bold rounded-lg shadow-md hover:bg-yellow-600 flex items-center">
               View More <FaArrowRight className="ml-2" />
             </button>

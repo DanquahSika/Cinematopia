@@ -11,6 +11,7 @@ const Nav = () => {
     { name: "Movies", link: "/movies" },
     { name: "TV Shows", link: "/tvshows" },
     { name: "Search", link: "/search" },
+    { name: "Genre", link: "/genre" },
   ];
   let [open, setOpen] = useState(false);
 
