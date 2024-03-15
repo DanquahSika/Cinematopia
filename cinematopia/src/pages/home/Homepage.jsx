@@ -5,6 +5,7 @@ import Recommended from "../../components/recommended/Recommended";
 import Featured from "../../components/featured/Featured";
 import TopRated from "../../components/toprated/Toprated";
 import ClassicMoviesAndTrivia from "../../components/classic-and-trivia/ClassicMoviesAndTrivia";
+import TrendingMovies from "../../components/trending-movies/TrendingMovies";
 
 const Homepage = () => {
   return (
@@ -13,6 +14,7 @@ const Homepage = () => {
       <Recommended />
       <Featured />
       <TopRated />
+      <TrendingMovies />
       <ClassicMoviesAndTrivia />
       <Footer />
     </div>

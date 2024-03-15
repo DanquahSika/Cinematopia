@@ -66,7 +66,7 @@ const Hero = () => {
 
   return (
     <div className="relative h-screen">
-      <div className="relative h-full overflow-hidden">
+      {/* <div className="relative h-full overflow-hidden">
         {movies.map((movie, index) => (
           <div
             key={movie.id}
@@ -108,7 +108,51 @@ const Hero = () => {
             </div>
           </div>
         ))}
+      </div> */}
+      <div className="relative h-full overflow-hidden">
+        {movies.map((movie, index) => (
+          <div
+            key={movie.id}
+            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+              alt={movie.title}
+              className="w-full h-full object-cover rounded-lg"
+            />
+            <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/80 p-8 text-center text-white flex flex-col justify-center">
+              <p className="text-2xl font-bold mb-4 text-yellow-600">
+                {movie.release_date}{" "}
+              </p>
+              <h1 className="text-5xl md:text-7xl font-bold mb-4">
+                {movie.title}
+              </h1>
+              <div className="mb-4 w-full md:w-1/2 mx-auto">
+                <h3 className="text-2xl font-bold mb-2">Overview</h3>
+                <p className="text-lg">{movie.overview} </p>
+              </div>
+              <div className="flex flex-col md:flex-row items-center justify-center md:justify-center">
+                <button
+                  className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mb-2 md:mb-0 md:mr-4 "
+                  onClick={handleSetReminder}
+                >
+                  Set Reminder
+                </button>
+                <button className="bg-white text-gray-800 font-bold py-2 px-4 rounded">
+                  Play Trailer
+                </button>
+              </div>
+            </div>
+            <div className="absolute top-0 right-0 px-2 py-1 bg-gray-800 rounded-bl-lg text-white text-lg md:text-2xl font-bold flex items-center">
+              <FaBell className="text-yellow-500 mr-2" />
+              Coming Soon
+            </div>
+          </div>
+        ))}
       </div>
+
       <div className="absolute bottom-4 left-0 right-0 flex justify-center mb-4">
         <button
           className="bg-yellow-600 text-white w-10 h-10 rounded-full focus:outline-none mr-4"
