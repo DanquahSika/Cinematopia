@@ -8,6 +8,7 @@ import SearchPage from "./pages/search-page/SearchPage";
 import TVShows from "./pages/tvshows/TVShows";
 import SingleMovie from "./pages/singlemovie/SingleMovie";
 import Login from "./pages/login";
+import GenrePage from "./components/genremovies/GenreMovies";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/tvshows" element={<TVShows />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/movies/:id" element={<SingleMovie />} />
+        <Route path="/genre" element={<GenrePage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,36 +1,16 @@
-// GenreButton.js
-import React, { useState, useEffect } from "react";
+// GenreButton.jsx
+import React from "react";
 
-const GenreButton = ({ onSelectGenre }) => {
-  const [genres, setGenres] = useState([]);
-
-  useEffect(() => {
-    const fetchGenres = async () => {
-      try {
-        const response = await fetch(
-          "https://api.themoviedb.org/3/genre/movie/list?api_key=758ef82708fe77d393847f402f8756a0"
-        );
-        const data = await response.json();
-        setGenres(data.genres);
-      } catch (error) {
-        console.error("Error fetching genres:", error);
-      }
-    };
-
-    fetchGenres();
-  }, []);
-
+const GenreButton = ({ genres, onSelectGenre }) => {
   return (
     <div className="genre-button">
       <button>Genre</button>
-      <ul>
+      <ul className="grid grid-cols-6 gap-1 p-0">
         {genres.map((genre) => (
-          <li
-            key={genre.id}
-            onClick={() => onSelectGenre(genre.id)}
-            className="cursor-pointer"
-          >
-            {genre.name}
+          <li key={genre.id} onClick={() => onSelectGenre(genre.id)}>
+            <button className="px-2 py-1 hover:bg-gray-100 cursor-pointer first:rounded-t-lg last:rounded-b-lg hover:text-blue-500">
+              {genre.name}
+            </button>
           </li>
         ))}
       </ul>
