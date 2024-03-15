@@ -34,7 +34,10 @@ const TVShows = () => {
           <img src={ripples} className="w-64 mx-auto" alt="Loading..." />
         </div>
       ) : (
-        <div className="grid lg:grid-cols-5 md:grid-cols-2 mx-auto items-center justify-center mt-5">
+        <div
+          className="grid lg:grid-cols-5 md:grid-cols-2 mx-auto items-center justify-center"
+          style={{ marginTop: "12rem" }}
+        >
           {tvshows.map((item) => {
             const posterUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
             return (

@@ -10,8 +10,8 @@ const Nav = () => {
     { name: "Popular", link: "/trending" },
     { name: "Movies", link: "/movies" },
     { name: "TV Shows", link: "/tvshows" },
-    { name: "Search", link: "/search" },
     { name: "Genre", link: "/genre" },
+    { name: "Search", link: "/search" },
   ];
   let [open, setOpen] = useState(false);
 
@@ -43,7 +43,7 @@ const Nav = () => {
         </div>
 
         <ul
-          className={`md:flex md:items-center md:pb-0  absolute md:static bg-transparent md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+          className={`md:flex md:items-center md:pb-0  absolute md:static  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
             open ? "top-20 " : "top-[-490px]"
           }`}
         >

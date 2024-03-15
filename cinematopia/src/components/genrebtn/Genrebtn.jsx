@@ -3,7 +3,7 @@ import React from "react";
 
 const GenreButton = ({ genres, onSelectGenre }) => {
   return (
-    <div className="genre-button">
+    <div className="genre-button px-7">
       <button>Genre</button>
       <ul className="grid grid-cols-6 gap-1 p-0">
         {genres.map((genre) => (

@@ -35,7 +35,7 @@ const Login = () => {
               />
               <Link to="/home" className="link">
                 <button className="bg-gradient-to-r from-yellow-100 to-yellow-500 text-white font-medium py-2 px-4 rounded-md hover:bg-yellow-100 hover:to-yellow-600 duration ease-in duration-200">
-                  Submit
+                  Log in
                 </button>
               </Link>
               <p className="text-white mt-4 text-center">
