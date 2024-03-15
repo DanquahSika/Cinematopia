@@ -55,11 +55,18 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "../../components/movie-card/MovieCard";
 import Pagination from "../../components/pagination/Pagination";
 import ripples from "../../assets/img/ripples.svg";
+import GenreButton from "../../components/genrebtn/Genrebtn";
+import MoviesByGenrePage from "../../components/genremovies/GenreMovies";
 
 const Movies = () => {
   const [film, setFilm] = useState([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true); // Added state for loading
+  const [selectedGenre, setSelectedGenre] = useState(null);
+
+  const handleSelectGenre = (genreId) => {
+    setSelectedGenre(genreId);
+  };
 
   const fetchFilm = async () => {
     setIsLoading(true); // Set loading to true before fetching
@@ -91,6 +98,8 @@ const Movies = () => {
           className="grid lg:grid-cols-5 md:grid-cols-2 mx-auto items-center justify-center mt-5 px-7"
           // style={{ maxWidth: "1340px" }}
         >
+          <GenreButton onSelectGenre={handleSelectGenre} />
+          {selectedGenre && <MoviesByGenrePage genreId={selectedGenre} />}
           {film.map((item) => {
             const posterUrl = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
             return (
