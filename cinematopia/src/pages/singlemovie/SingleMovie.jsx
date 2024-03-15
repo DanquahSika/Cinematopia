@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ripple from "../../assets/img/ripples.svg";
+import star from "../../assets/img/star.png";
 
 const SingleMovie = () => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const SingleMovie = () => {
       );
       const data = await response.json();
       // Slice the first four reviews
-      const limitedReviews = data.results.slice(0, 4);
+      const limitedReviews = data.results.slice(0, 2);
       setReviews(limitedReviews);
     } catch (error) {
       console.error("Error fetching reviews:", error);
@@ -83,19 +84,16 @@ const SingleMovie = () => {
           )}
         </div>
       </div>
-      <div className="movie-details px-7">
-        <div
-          className="poster-textitems-1 flex pt-3 gap-5 text-center"
-          style={{ width: "700px" }}
-        >
+      <div className="movie-details px-7 pt-5">
+        <div className="poster-textitems-1 flex pt-3 gap-2  text-left">
           <img
             src={imageUrl}
             alt={movieData.title}
-            className="movie-poster rounded"
-            style={{ width: "500px", height: "500px" }}
+            className="movie-poster rounded transition duration-300 ease-in-out hover:scale-105"
+            style={{ width: "300px", height: "400px" }}
           />
           <div className="movie-info text-left">
-            <h2 className="text-3xl font-bold pt-2">{movieData.title}</h2>
+            <h2 className="text-3xl font-bold">{movieData.title}</h2>
             <p className="pt-2">
               <b>Release Date:</b> {movieData.release_date}
             </p>
@@ -103,7 +101,7 @@ const SingleMovie = () => {
               <b>Genres:</b>{" "}
               {movieData.genres.map((genre) => genre.name).join(", ")}
             </p>
-            <p className="pt-2">
+            <p className="pt-2 text-sm text-wrap">
               <b>Overview:</b> {movieData.overview}
             </p>
             <p className="pt-2">
@@ -112,24 +110,27 @@ const SingleMovie = () => {
                 .map((company) => company.name)
                 .join(", ")}
             </p>
-            <p className="pt-2">
-              <b>Rating:</b> {movieData.vote_average}
+            <p className="pt-2 flex font-bold text-xl">
+              <span>
+                <img src={star} className="w-6 mr-2" />
+              </span>
+              {movieData.vote_average}
             </p>
           </div>
-        </div>
-        <div className="movie-review">
-          <h3 className="text-center text-3xl font-bold">Movie Reviews</h3>
-          <div className="review-card flex gap-5">
-            {reviews.map((review) => (
-              <div key={review.id} className="w-full">
-                <p className="text-center pt-2 px-2">
-                  <b>Author:</b> {review.author}
-                </p>
-                <p className="text-center pt-2 px-2">
-                  <b>Content:</b> {review.content.substring(0, 70)}
-                </p>
-              </div>
-            ))}
+          <div className="movie-review rounded ">
+            <h3 className="text-left text-3xl font-bold">Reviews</h3>
+            <div className="review-card">
+              {reviews.map((review) => (
+                <div key={review.id} className="">
+                  <p className="text-left pt-2 px-2 font-bold">
+                    Author: {review.author}
+                  </p>
+                  <p className="text-left pt-2 px-2">
+                    <strong>Content:</strong> {review.content.substring(0, 200)}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
