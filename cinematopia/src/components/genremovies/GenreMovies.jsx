@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 // import play from "../../assets/img/playfilled.svg";
 // import { Link } from "react-router-dom";
-
+``;
 const MoviesByGenrePage = ({ genreId }) => {
   const [movies, setMovies] = useState([]);
 
