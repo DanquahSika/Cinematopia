@@ -1,0 +1,25 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.social-links i{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.social-links i:hover{
+	color: #ea8f11;
+	background-color: #ffffff;
+}
